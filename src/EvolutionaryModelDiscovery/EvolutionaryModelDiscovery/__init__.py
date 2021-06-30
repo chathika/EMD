@@ -128,13 +128,12 @@ class EvolutionaryModelDiscovery:
         ModelFactors = importlib.import_module(f'EvolutionaryModelDiscovery.{module_name}')        
         return ModelFactors, netlogo_writer
     
-    def evolve(self) -> pd.DataFrame:
+    def evolve(self, num_procs : int = -1) -> pd.DataFrame:
         '''
         Conduct evolution using initialized genetic program
 
         :returns: pandas DataFrame with genetic program results
         '''
-        num_procs = -1
         # Begining evolution
         for run in range(self.replications):
             print('--- Starting GP Run {} ---'.format(run))             

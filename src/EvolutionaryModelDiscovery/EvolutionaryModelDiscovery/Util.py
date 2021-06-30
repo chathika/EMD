@@ -38,7 +38,7 @@ def get_lock_fpath() -> str:
     return lock_fpath
 
 def remove_model_factors_file():
-    Path(get_model_factors_path()).unlink(missing_ok=True)
+    Path(get_model_factors_path()).unlink()
 
 def create_model_factors_file():
     if Path.exists(Path(get_model_factors_path())):
